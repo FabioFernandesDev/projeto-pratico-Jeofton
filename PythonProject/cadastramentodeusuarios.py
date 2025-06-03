@@ -11,7 +11,7 @@ def menu(): #Menu de acesso as opções
  opcao= input("Escolha uma Opção")
  return opcao
 
-def adicionar usuario(): #Opção de Adicionar Usuario
+def adicionar_usuario(): #Opção de Adicionar Usuario
  nome = input("Digite o nome do usuario")
  idade = input("Digite a idade do usuario")
  email = input("digite o email do usuario")
@@ -26,3 +26,14 @@ usuario = {
 
 usuario.append(usuario)
 print("Usuario adicionado com sucesso")
+
+def listar_usuario(): #opção para listar usuario
+ if not usuarios:
+  print("Nenhum usuario cadastrado.")
+  return
+ 
+ print("LISTA DE USUARIOS")
+ for i, usuario in enumerate(usuarios,start=1):
+  print(f"{i}. Nome:{usuario['nome']}, Idade: {usuario['idade']}, Email:{usuario['email']}, Contato: {usuario['contato']}")
+
+  
