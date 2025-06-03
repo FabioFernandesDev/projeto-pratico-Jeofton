@@ -37,4 +37,21 @@ def listar_usuarios(): #opção para listar usuario
  for i, usuario in enumerate(usuarios, start=1):
   print(f"{i}. Nome:{usuario['nome']}, Idade: {usuario['idade']}, Email:{usuario['email']}, Contato: {usuario['contato']}")
 
-  
+def buscar_usuario_por_nome(): #opção para buscar usuario
+ if not usuarios:
+    print("\nNenhum usuario foi encontrado na busca.")
+    return
+ 
+ nome_busca = input("Digite o nome do usuario que deseja buscar: ")
+ encontrados []
+ for usuario in usuarios:
+   if nome_busca.lower() in usuario['nome'].lower():
+    encontrados.append(usuario)
+
+    if not encontrados:
+      print(f"\nenhum usuario encontrado com o nome '{nome_busca}'.")
+    else: 
+      print(f"\n--- Usuaios encontardos cpm o nome '{nome_busca}'.")
+      for i, usuario in enumerate(encontrados, start=1):
+        print(f"{i}. Nome: {usuario['nome']}, Idade:{usuario['idade']}, Email: {usuario['email']}, Contato: {usuario['contato']}")
+
