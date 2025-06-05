@@ -55,3 +55,29 @@ def buscar_usuario_por_nome(): #opção para buscar usuario
       for i, usuario in enumerate(encontrados, start=1):
         print(f"{i}. Nome: {usuario['nome']}, Idade:{usuario['idade']}, Email: {usuario['email']}, Contato: {usuario['contato']}")
 
+def remover_usuario(): #opção para remover usuarios
+  if not usuarios:
+    print("\nNenhum usuario cadastrado para remover")
+    return
+  
+  listar_usuarios()
+  nome_remover = input("Digite o nome do usuario que deseja remover")
+
+  usuario_encontrado = None
+  indice_remover = -1
+
+for i, usuario in enumerate(usuarios):
+    if usuario['nome'] == nome_remover:
+         usuario_encontrado = usuario
+         indice_remover = i
+         break
+    
+ if usuario_encontrado:
+    confirmacao = input(f"Tem certeza que deseja remover o usuario {usuario_encontrado['nome']}?(s/n): ")
+    if confirmacao.lower() == 's':
+       del usuarios[indice_remover]     
+       print(f"\nUsuario '{nome_remover}' removido com sucesso!")
+    else:
+      print("\nRemoção cancelada")
+else: 
+  print(f"\nUsuario com o nome '{nome_remover}' não encontrado.")
