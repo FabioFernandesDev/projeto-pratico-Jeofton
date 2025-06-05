@@ -81,3 +81,23 @@ for i, usuario in enumerate(usuarios):
       print("\nRemoção cancelada")
 else: 
   print(f"\nUsuario com o nome '{nome_remover}' não encontrado.")
+
+def main(): #principal funçãodo sistema/loop do programa
+  while True:
+    opcao = menu()
+    if opcao == '1':
+      adicionar_usuario()
+    elif opcao == '2':
+      listar_usuarios()
+    elif opcao == '3':
+      buscar_usuario_por_nome()
+    elif opcao '4':
+      remover_usuario()
+    elif opcao '5':
+       print("\nSaindo do programa. . . ")
+       break
+    else:
+      print("\nOpção Invalida. Tente novamente.")
+
+if __name__ == "__main__":
+  main()
